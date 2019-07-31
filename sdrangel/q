@@ -1,0 +1,22 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+   Active: [0;1;32mactive (running)[0m since Wed 2019-07-31 18:11:55 CEST; 55s ago
+     Docs: http://docs.docker.com
+ Main PID: 27540 (dockerd)
+    Tasks: 28
+   Memory: 66.9M
+      CPU: 577ms
+   CGroup: /system.slice/docker.service
+           ├─27540 /usr/bin/dockerd --add-runtime oci=/usr/sbin/docker-runc
+           └─27549 docker-containerd --config /var/run/docker/containerd/containerd.toml --log-level warn
+
+Jul 31 18:11:53 taplop dockerd[27540]: time="2019-07-31T18:11:53.845632018+02:00" level=warning msg="could not use snapshotter aufs in metadata plugin" error="modprobe aufs failed: "modprobe: FATAL: Module aufs not found in directory /lib/modules/4.12.14-lp151.28.10-default\n": exit status 1"
+Jul 31 18:11:54 taplop dockerd[27540]: time="2019-07-31T18:11:54.018123673+02:00" level=error msg="'overlay2' is not supported over nfs" storage-driver=overlay2
+Jul 31 18:11:54 taplop dockerd[27540]: time="2019-07-31T18:11:54.018245691+02:00" level=error msg="Failed to built-in GetDriver graph aufs /var/lib/docker"
+Jul 31 18:11:54 taplop dockerd[27540]: time="2019-07-31T18:11:54.025442509+02:00" level=error msg="'overlay' is not supported over nfs" storage-driver=overlay
+Jul 31 18:11:54 taplop dockerd[27540]: time="2019-07-31T18:11:54.171418723+02:00" level=warning msg="Usage of loopback devices is strongly discouraged for production use. Please use `--storage-opt dm.thinpooldev` or use `man dockerd` to refer to dm.thinpooldev section." storage-driver=devicemapper
+Jul 31 18:11:55 taplop dockerd[27540]: time="2019-07-31T18:11:55.090442667+02:00" level=warning msg="[graphdriver] WARNING: the devicemapper storage-driver is deprecated, and will be removed in a future release"
+Jul 31 18:11:55 taplop dockerd[27540]: time="2019-07-31T18:11:55.110294173+02:00" level=warning msg="Your kernel does not support swap memory limit"
+Jul 31 18:11:55 taplop dockerd[27540]: time="2019-07-31T18:11:55.110402973+02:00" level=warning msg="Your kernel does not support cgroup rt period"
+Jul 31 18:11:55 taplop dockerd[27540]: time="2019-07-31T18:11:55.110437932+02:00" level=warning msg="Your kernel does not support cgroup rt runtime"
+Jul 31 18:11:55 taplop systemd[1]: Started Docker Application Container Engine.

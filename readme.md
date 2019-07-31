@@ -38,7 +38,13 @@ Then things will be the same as when running Docker in a Linux box and thus all 
 
 In order to run docker commands as a normal user you will need to add your user to the `docker` group (using sudo once): `sudo usermod -a -G docker $USER`. Then you have to log out and back in to make it effective.
 
-Type `groups` to verify `docker` is in the list of groups your user belongs to.
+Type `groups` to verify `docker` is in the list of groups your user belongs to. Or just type `id`.
+
+<h2>example commandline to do a quick test if the container starts/displays</h2>
+
+xhost +
+docker run -it --rm   -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix sdrangel/vanilla
+(control-d to exit the container)
 
 <h2>Get familiar with Docker</h2>
 
@@ -46,11 +52,11 @@ Although a set of shell scripts are there to help you build images and run conta
 
 <h2>GUI tools</h2>
 
-Optionnally you can install a GUI tool to manage and monitor Docker images and containers.
+Optionally you can install a GUI tool to manage and monitor Docker images and containers.
 
 <h3>Kitematic</h3>
 
-Kitematic is a GUI application to monitor and configure containers live. You can check the [home page here](https://kitematic.com/). Although flagged as "legacy" in Docekr documentation it still alive on Github.
+Kitematic is a GUI application to monitor and configure containers live. You can check the [home page here](https://kitematic.com/). Although flagged as "legacy" in Docker documentation it still alive on Github.
 
 You can check the [Github repository](https://github.com/docker/kitematic) where a .deb package is available. Arch users will find a package in the AUR.
 
